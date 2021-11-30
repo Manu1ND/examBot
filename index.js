@@ -42,14 +42,13 @@ client.on('messageCreate', async msg => {
             });
             break;
 
-        case "bye": // for ingle channel
+        case "bye": // for single channel
             byeEmbed(msg.channel);
             break;
 
         case "byeDM": // for DM
             (await msg.guild.members.fetch()).forEach(member => {
-                if (member.user.bot == false && member.user.username == "Manu1ND") {
-                    console.log(member.user.username);
+                if (member.user.bot == false) {
                     byeEmbed(member.user, member.user);
                 }
             });
