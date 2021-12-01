@@ -3,7 +3,7 @@ const { Client, Intents, MessageEmbed } = require('discord.js');
 const process = require('process'); // Allocating process module
 const axios = require('axios');
 
-const prefix = "~";
+const prefix = "+";
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS] }); //create new client
 
 client.on('ready', () => {
@@ -46,7 +46,7 @@ client.on('messageCreate', async msg => {
             byeEmbed(msg.channel);
             break;
 
-        case "byeDM": // for DM
+        case "byedm": // for DM
             (await msg.guild.members.fetch()).forEach(member => {
                 if (member.user.bot == false) {
                     byeEmbed(member.user, member.user);
