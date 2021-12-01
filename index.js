@@ -3,7 +3,7 @@ const { Client, Intents, MessageEmbed } = require('discord.js');
 const process = require('process'); // Allocating process module
 const axios = require('axios');
 
-const prefix = "+";
+const prefix = "~";
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS] }); //create new client
 
 client.on('ready', () => {
